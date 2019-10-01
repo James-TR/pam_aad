@@ -25,6 +25,8 @@ AC_ARG_ENABLE([man],
 	      )
 
 AC_SUBST(PAMDIR, "\$(exec_prefix)/lib/security")
+AC_SUBST([SDS_CFLAGS], ['-I$(top_srcdir)/ext/sds'])
+AC_SUBST([SDS_LIBS], ['$(top_builddir)/ext/sds/libsds.la'])
 AC_ARG_WITH(pam-dir,
 	    AC_HELP_STRING([--with-pam-dir=DIR],
 			   [Where to install PAM module [[PREFIX/lib/security]]]),
@@ -50,7 +52,8 @@ AC_TYPE_SIZE_T
 dnl Checks for library functions.
 AC_CHECK_FUNCS([floor memset pow strchr strdup strstr])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile
+		 ext/sds/Makefile])
 AC_OUTPUT
 
 AC_MSG_NOTICE([Summary of build options:

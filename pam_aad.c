@@ -1,7 +1,7 @@
 #include <curl/curl.h>
 #include <jansson.h>
 #include <jwt.h>
-#include <sds/sds.h>
+#include "ext/sds/sds.h"
 #include <security/pam_appl.h>
 #include <security/pam_ext.h>
 #include <security/pam_modules.h>
